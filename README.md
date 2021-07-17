@@ -20,6 +20,10 @@ Typical usage example to create a CSV of all dependabot vulnerabilities for two 
 
 You can find instructions for getting an oauth token [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). Be sure to give it repo access for whatever repo you are reporting on.
 
+## Limitations
+
+If a repo has more than 100 alerts the report will not include them since we don't paginate from the github API.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
