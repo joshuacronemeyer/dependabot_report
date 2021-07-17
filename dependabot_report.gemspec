@@ -9,10 +9,12 @@ Gem::Specification.new do |spec|
   spec.email         = ["joshuacronemeyer@gmail.com"]
 
   spec.summary       = "Generate documentation from Github Dependabot"
+  # rubocop:disable Layout/LineLength
   spec.description   = "Dependabot artifacts are all locked up in github, but sometimes you need to share that information with people who don't have access to your repo. Now you can."
+  # rubocop:enable Layout/LineLength
   spec.homepage      = "https://github.com/joshuacronemeyer/dependabot_report"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.0")
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 

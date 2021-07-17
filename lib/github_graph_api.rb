@@ -2,6 +2,7 @@
 
 require "net/http"
 require "json"
+# Understands github graph api
 class GithubGraphApi
   ENDPOINT = "https://api.github.com/graphql"
   def initialize(oauth_token)
