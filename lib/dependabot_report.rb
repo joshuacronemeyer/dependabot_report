@@ -1,16 +1,15 @@
 # frozen_string_literal: true
 
 require_relative "dependabot_report/version"
-require 'thor'
-require 'csv'
-require 'json'
-require 'github_graph_api'
+require "thor"
+require "csv"
+require "json"
+require "github_graph_api"
 
 module DependabotReport
-
   class DependabotReport < Thor
     package_name "Dependabot Report"
-    method_options :oauth_token => :string
+    method_options oauth_token: :string
     desc "csv OWNER REPOS", "Create CSV report of dependabot vulnerabilities for OWNER's REPO(s)"
 
     def csv(owner, *repos)
@@ -22,12 +21,15 @@ module DependabotReport
         repos.each do |repo|
           dependaboot_data = JSON.parse(api.fetch_vulnerabilities(owner: owner, project: repo))
           next unless dependaboot_data["data"]
+
           alerts = dependaboot_data["data"]["repository"]["vulnerabilityAlerts"]["nodes"]
           puts "Found #{alerts.count} vulnerabilities from #{repo}. Creating csv report in dependabot_alerts.csv"
-          alerts.each{|alert| csv << [repo, alert["securityVulnerability"]["package"]["name"], alert["securityVulnerability"]["advisory"]["description"]]}
+          alerts.each do |alert|
+            csv << [repo, alert["securityVulnerability"]["package"]["name"],
+                    alert["securityVulnerability"]["advisory"]["description"]]
+          end
         end
       end
     end
-
   end
 end
