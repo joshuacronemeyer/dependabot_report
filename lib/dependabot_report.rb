@@ -2,9 +2,9 @@
 
 require_relative "dependabot_report/version"
 require 'thor'
-require_relative './github_graph_api.rb'
 require 'csv'
-require "json"
+require 'json'
+require 'github_graph_api'
 
 module DependabotReport
 
@@ -14,7 +14,7 @@ module DependabotReport
     desc "csv OWNER REPOS", "Create CSV report of dependabot vulnerabilities for OWNER's REPO(s)"
 
     def csv(owner, *repos)
-      api = GithubGraphApi.new(ENV["GITHUB_OAUTH_TOKEN"] || ooptions.oauth_token)
+      api = GithubGraphApi.new(ENV["GITHUB_OAUTH_TOKEN"] || options.oauth_token)
 
       CSV.open("dependabot_alerts.csv", "w") do |csv|
         headings = ["Repo", "Vulnerability Name", "Description"]

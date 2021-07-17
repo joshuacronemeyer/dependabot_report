@@ -14,6 +14,12 @@ Run this to print out usage:
 
     $ dependabot_report
 
+Typical usage example to create a CSV of all dependabot vulnerabilities for two repositories:
+
+    $ dependabot_report csv joshuacronemeyer dependabot_report shellsink --oauth_token=some-token-string
+
+You can find instructions for getting an oauth token [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). Be sure to give it repo access for whatever repo you are reporting on.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
