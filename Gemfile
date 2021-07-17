@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
+ruby "2.7.3"
 source "https://rubygems.org"
 
 # Specify your gem's dependencies in dependabot_report.gemspec
 gemspec
 
-gem "rake", "~> 13.0"
+gem "rake"
 
-gem "rubocop", "~> 1.7"
+gem "rubocop"
 gem "thor"

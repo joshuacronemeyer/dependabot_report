@@ -32,12 +32,16 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-darwin-20
 
 DEPENDENCIES
   dependabot_report!
-  rake (~> 13.0)
-  rubocop (~> 1.7)
+  rake
+  rubocop
   thor
 
+RUBY VERSION
+   ruby 2.7.3p183
+
 BUNDLED WITH
-   2.2.15
+   2.2.21

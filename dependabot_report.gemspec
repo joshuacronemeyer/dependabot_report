@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   # rubocop:enable Layout/LineLength
   spec.homepage      = "https://github.com/joshuacronemeyer/dependabot_report"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.3")
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
